@@ -5,18 +5,23 @@ class Solution:
         if len(s) != len(t):
             return False
         
-        s_sorted, t_sorted = ''.join(sorted(s)), ''.join(sorted(t))
+        s_count, t_count = {}, {}
         
-        if s_sorted == t_sorted:
+#         if s_sorted == t_sorted:
+#             return True
+#         else:
+#             return False
+        
+        for i in range(len(s)):
+            s_count[s[i]] = s_count.get(s[i], 0) + 1
+            t_count[t[i]] = t_count.get(t[i], 0) + 1
+        
+        if s_count ==  t_count:
             return True
         else:
             return False
-        
-#         for letter in s:
-#             if letter in count_table:
-#                 count_table[letter] += 1
-#             else:
-#                 count_table[letter] = 0
+
+            
         
         
             
